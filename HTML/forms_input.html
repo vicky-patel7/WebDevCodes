@@ -5,15 +5,78 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Forms&Input</title>
 </head>
 
 <body>
 
 </body>
 
-    <!--<form> tag is used to build a form on the webpage
+<!--<form> tag is used to build a form on the webpage
         action attribute is usedd to specifies where the form after submission is to be stored-->
-        
+<form action="backend.php">
+    <!-- <input> tag is used to recieve input and by type attribute we can select the 'type' of the input we want
+            it can be of many type... text,buton,radio or many other-->
+    <!-- 'value' attribute is used for telling the user what to enter
+            'name' attribute is used for backend purpose it means what name you want to give in backend to store the data input by the user
+            -->
+    <div>
+        <!--<label> tag is used to select the input area by just clicking on the text of that specified input element
+            value of 'for' attribute of label tag and value of 'id' attribute of inpute tag should be same-->
+        <label for="name">Name</label>
+        <input type="text" value="" name="myName" id="name">
+    </div>
+    <div>
+        Email: <input type="text" value="" name="myEmail">
+    </div>
+    <div>
+        Birth: <input type="date" name="DOB" id="birth">
+    </div>
+    <div>
+        Contact Number: <input type="number" value="" name="myPhone">
+    </div>
+    <div>
+        Are you above 18 yrs old:<input type="checkbox" name="Eligibility" id="">
+    </div>
+    <div>
+        Gender:
+        M<input type="radio" name="Gender" id="">
+        F<input type="radio" name="Gender" id="">
+    </div>
+
+    <div>
+        Massege:<textarea name="Massege"></textarea>
+    </div>
+
+    <!-- <select> tag with <option> tag is used for showing some choices to the user to select from-->
+    <div>
+        <label for="state">State</label>
+        <select name="myState" id="state">
+
+            <option value="">No Selection</option>
+            <option value="">Bihar</option>
+            <option value="">Gujarat</option>
+            <option value="">Maharashtra</option>
+            <option value="">Punjab</option>
+            <option value="">Orrisa</option>
+        </select>
+    </div>
+    <div>
+        I, here myself verify these all the above given informations.<br>
+        <input type="radio" name="Checked1" id="">Name
+        <input type="radio" name="Checked2" id="">Email
+        <input type="radio" name="Checked3" id="">Birth
+        <input type="radio" name="Checked4" id="">Contact info
+        <input type="radio" name="Checked5" id="">Above 18
+        <input type="radio" name="Checked6" id="">Gender
+
+    </div>
+    <div>
+        <!--for submitting the form -->
+        <input type="submit" value="Submit">
+        <input type="reset" value="Clear">
+    </div>
+
+</form>
 
 </html>
