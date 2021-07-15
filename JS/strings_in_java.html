@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strings in JAVASCRIPT</title>
+    <script>
+
+
+        var str = "Hello"
+        var str2 = 'Hello'
+        console.log(str);
+        console.log(str2);
+        var name = 'Hello! Dost'
+        var msg = 'I am coming to your village for the scenaries'
+
+        //Another way of concatination of two or more strings or characters
+        var fmsg = `${name} ${msg}`;
+        console.log(fmsg);
+
+        //some string functions
+        var str = 'This is a string';
+
+        //First occurance of the string
+        var sbstr = str.indexOf('is');
+        console.log(sbstr);
+
+        //Last occurance of the string
+        var sbstr2 = str.lastIndexOf('is');
+        console.log(sbstr2);
+
+        //substring from a string. it require two index from and to
+        var substr = str.slice(2, 3);
+        console.log(substr);
+        //aliter
+        var substr2 = str.substring(2, 3);
+        console.log(substr2);
+        var substr3 = str.substr(2, 3);// this take both index while slicing the string
+        console.log(substr3);
+
+        //replacing a string or character from existing string
+        var replaced = str.replace('string', 'awesome'); // require searched string to be replaced and and by which it should be replaced 
+        console.log(replaced);
+
+        //concerting in upper or lower case
+        var uc = str.toUpperCase();
+        console.log(uc);
+
+        var lc = uc.toLocaleLowerCase();
+        console.log(lc);
+
+        //directly concatinate the string
+        var newStr = str.concat(' and a lot');
+        console.log(newStr);
+
+        //string with white sapces
+        var spaces = '   this is           fully functional    ';
+        console.log(spaces);
+        //after trimimg beginning and end white spaaces
+        console.log(spaces.trim());
+
+        //extracting a character from a string
+        var ext = str.charAt(1);
+        console.log(ext);
+        //getting character code of a character from a string as per ascii value
+        var cc = str.charCodeAt(1);
+        console.log(cc);
+
+        //another way of slicing string and getting a character
+        console.log(str[2]);
+
+
+
+
+
+
+    </script>
+
+
+</head>
+
+<body>
+    <div class="container">
+        <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque corrupti, odio quaerat dicta est iste
+            maxime, quasi ab aspernatur optio soluta fugit tempora explicabo culpa vero quidem aliquam repudiandae vel.
+        </h3>
+    </div>
+</body>
+
+</html>
