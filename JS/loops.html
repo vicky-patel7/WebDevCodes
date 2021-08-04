@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops in js</title>
+</head>
+
+<body>
+    <div class="container">
+        <strong>
+            This is all about loop
+        </strong>
+        <script>
+
+            console.log("This is loop tutorial");
+            for (let i = 0; i < 5; i++) {
+                console.log(i);
+
+            }
+
+            let frnds = ["Ravi", "Shyam", "John", "Himanshu", "Rohit"];
+            for (let index = 0; index < frnds.length; index++) {
+                console.log(frnds[index]);
+
+            }
+            console.log("Another way");
+            //Another way of printing each element of array
+            //for each loop
+            frnds.forEach(function f(element) {
+                console.log(element);
+            })
+
+            //again one another way of printing the elements
+            //for of loop
+            console.log("One more way");
+            for (element of frnds) {
+                console.log(element);
+            }
+
+            let employee = {
+                name: "Ravi",
+                salary: 57676,
+                nickname: "GuptaJi"
+            }
+
+            //for in loop for accessing elements of object
+            for (key in employee) {
+                console.log(`The ${key} of employee is ${employee[key]}`);
+            }
+            console.log("While Loop");
+            var i = 0
+            while (i < 5) {
+                console.log(`${i} is less than 5`);
+                i++;
+            }
+            console.log("Do While Loop");
+            let j = 0;
+            do {
+                console.log(`${j} is less than 4`);
+                j++;
+            } while (j < 4);
+
+
+
+        </script>
+    </div>
+</body>
+
+</html>

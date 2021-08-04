@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays and Object</title>
+
+    <script>
+
+        let myVar = 34;
+        let myVar1 = "string";
+        let myVar2 = true;
+        let myVar3 = null;
+        let myVar4 = undefined;
+        //Creating an object
+        let employee = {
+            name: "Ravi",
+            nickname: "Gupta",
+            salary: 10000
+        }
+        console.log(employee);
+        //Creating an array
+        let names = [1, 4, 6, 5, 9, 2, "Ravi", "Shubham", "Shyam"];
+        console.log(names); //this prints all the elements of the array
+        //printing element at a specific index
+        console.log(names[6]);
+        //for shorting the elements of an aarray
+        names = names.sort();
+        console.log(names);
+
+        //Adding an element to the array
+        names.push(23, "Ram");
+        console.log(names);
+
+        //Creating an array of size 45
+        let marks = new Array(45);
+        console.log(marks);
+
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <p>This is all about Arrays and Object in JavaScript</p>
+    </div>
+</body>
+
+</html>

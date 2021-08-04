@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions in JavaScript</title>
+</head>
+<body>
+    <strong>
+        This is all about function in JavaScript
+    </strong>
+    <div class="container">
+        This is container
+    </div>
+</body>
+<script>
+    console.log("Function tutorial");
+    //printing gereeting text with fuctions
+    function greetUser(name){
+        console.log(name + " Good morning, Have a good wonderful day!");
+    }
+
+    //printing gereeting text with fuctions by passing greet text arguments too
+    function greetUser1(name, greetText){
+        console.log(name +" " + greetText);
+    }
+
+    // letting variables
+    let name = "Ravi";
+    let name1 = "Shyam";
+    let name2 = "Shubham";
+    let name3 = "Ankit";
+    //printing with console function with each variable
+    console.log(name + " Good morning, Have a good wonderfull day!");
+    console.log(name1 + " Good morning, Have a good wonderfull day!");
+    console.log(name2 + " Good morning, Have a good wonderfull day!");
+    console.log(name3 + " Good morning, Have a good wonderfull day!");
+
+    //printing using the written function by just calling with the arguments
+    greetUser(name);
+    greetUser(name1);
+    greetUser(name2);
+    greetUser(name3);
+
+    // we can even pass greet text there in the function
+    greetText = "How yours day is going";
+    greetUser1(name,greetText);
+    greetUser1(name1,greetText);
+    greetUser1(name2,greetText);
+    greetUser1(name3,greetText);
+
+
+</script>
+</html>

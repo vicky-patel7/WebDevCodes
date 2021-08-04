@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alert Prompt Confirm</title>
+</head>
+
+<body>
+    <div class="container">
+        This is a page conataining alert, promt and confirm interaction
+    </div>
+    <script>
+        //This is an alert--Does  not return any thing. 
+        alert("Are you ready to end the page");
+
+        let name = prompt("What is your name?", "Guest");//first argument is massege and second argument is default value input. This store the entered value in variable name
+        console.log(name); // printing the value assigned to the variable name
+
+        let deletePost = confirm("Do you really want to delete this post?");
+        //return true or false 
+        // console.log(deletePost);
+        if (deletePost) {
+            console.log("Your post has successfully deleted.");
+        }
+        else {
+            console.log("You have cancelled the deletion");
+        }
+
+    </script>
+</body>
+
+</html>
