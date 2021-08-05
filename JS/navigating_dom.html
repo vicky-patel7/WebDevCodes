@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigating DOM</title>
+</head>
+
+<body>
+    <div class="conatianer">
+        <ul>
+            <li>
+                Item-1
+                Item-1
+                Item-1
+                Item-1
+            </li>
+        </ul>
+    </div>
+    <div class="conatianer">
+        This is another conatiner.
+    </div>
+    <script>
+        let main = document.getElementById('main');
+        console.log(main);
+        let nav = document.getElementById('nav');
+        console.log(nav);
+
+        let containers = document.getElementsByClassName('container');
+        console.log(containers);
+        //We can also use css selector for id and class both or any other 
+        //using querySelector we get the firt conatiner with the selected class name
+        // let sel = document.querySelector('#nav>li');
+        // console.log("Selector returns ", sel);
+
+
+        //This return all the matched selected item
+        let sel = document.querySelectorAll('#nav>li');
+        console.log("Selector returns ", sel)
+
+    </script>
+</body>
+
+</html>
+
+</body>
+
+</html>

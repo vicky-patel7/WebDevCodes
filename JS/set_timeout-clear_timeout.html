@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SetIn Timeinterval setTimeOut</title>
+</head>
+
+<body>
+    <div class="container">
+        This is container
+    </div>
+    <div id="time">
+
+    </div>
+    <script>
+
+        // setTimeout --> Allows us to run the function at once after thee intervaal of time
+        // clearTimeout --> Allow us to run the function repeaatedly after the interval of time
+
+        function greet(
+            //this can also take as many argum,ents as we wish
+            name, byeText
+        ) {
+            console.log("Good morning Mr or Mrs " + name + " " + byeText);
+        }
+        //setTimeout takes only function name not paranthesis 
+        setTimeout(greet, 5000, "Ravi"); // Arguement can be passed as amny as we wish but after the function name and interval time
+
+        // we can also store the return of the timeout function in a variable to build logics on that later
+
+        let timeOut = setTimeout(greet, 5000, "Ravi");
+        console.log(timeOut);
+
+        //cleartimeout is used to clear the timeout function
+        clearTimeout(timeOut);
+
+        setInterval(greet, 1000, "Ravi", "Good Night");
+        //clearinterval is used to clear the interval function
+        let intervalId = setInterval(greet, 1000, "Ravi", "Good Night");
+        console.log(intervalId);
+
+        //Displaying Date and Time on the web page
+        function displayTime() {
+            time = new Date();
+            console.log(time);
+            document.getElementById('time').innerHTML = time;
+
+        }
+        setInterval(displayTime, 1000);
+
+
+
+    </script>
+</body>
+
+</html>
