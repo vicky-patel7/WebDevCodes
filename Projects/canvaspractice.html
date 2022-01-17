@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Practice</title>
+    <style>
+        canvas{
+            width: 200pt;
+            height: 100pt;
+            margin: 10px;
+            border: 1px solid lightgray;
+        }
+
+        input{
+            font-size: 20pt;
+        }
+        .blueback{
+            background-color:blue;
+        }
+        .yellowback{
+            background-color:yellow;
+        }
+        .orangeback{
+            background-color:orange;
+        }
+        .fuchiaback{
+            background-color:fuchsia;
+        }
+    </style>
+
+    <script>
+        function changeOrange(){
+            var divElement1 = document.getElementById("div1");
+            var divElement2 = document.getElementById("div2");
+            divElement1.className = "blueback";
+            divElement2.className = "orangeback";         
+        }
+        
+        function doRed(){
+            var d1 = document.getElementById("div1");
+            var d2 = document.getElementById("div2");
+            d1.style.backgroundColor = "red"
+            d2.style.backgroundColor = "blue"
+
+        }
+        function doBlue(){
+            var canvas = document.getElementById("div1");
+            var d2 = document.getElementById("div2");
+            canvas.style.backgroundColor = "blue"
+            d2.style.backgroundColor = "red"
+            var context = canvas.getContext("2d");
+
+            context.fillStyle = "yellow";
+            context.fillRect(10,10,60,60);
+            context.fillRect(80,10,60,60);
+
+            context.fillStyle = "black";
+            context.font = "20px Arial";
+            context.fillText("Hello", 15,45);
+        }
+    </script>
+</head>
+<body>
+    <h1 id="t1">Canvas Practice</h1>
+    <canvas id="div1" class="orangeback">
+
+    </canvas>
+    <canvas id="div2" class="fuchiaback">
+
+    </canvas>
+    <input type="button" value="Change Colour" onclick="changeOrange()">
+    <p>
+        <input type="button" value="DoRed" onclick="doRed()">
+        <input type="button" value="DoBlue" onclick="doBlue()">
+    </p>
+</body>
+</html>

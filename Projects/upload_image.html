@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload an image on th webpage</title>
+    <script src="https://www.dukelearntoprogram.com/course1/common/js/image/SimpleImage.js"></script>
+<style>
+    header h3{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 30px;
+        font-style: oblique;
+    }
+</style>
+
+<script>
+    function upload(){
+        var fileinput = document.getElementById("fileinput");
+        // var filename = fileinput.value;
+        // alert("You choose "+ filename);
+        var image = new SimpleImage(fileinput);
+        var canvas = document.getElementById("can");
+        image.drawTo(canvas);
+    }
+</script>
+</head>
+<body>
+    <header>
+        <h3>
+            UPLOADING AN IMAGE ON THE WEBPAGE
+        </h3>
+    </header>
+    <canvas id="can">
+
+    </canvas>
+   <!-- Filename: <input type="text" name="" id="input"> -->
+   Filename: <input type="file" name="" multiple="false" accept="image/*" id="fileinput">
+    <input type="button" value="Upload" onclick="upload()">
+</body>
+</html>

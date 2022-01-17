@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input and events</title>
+    <style>
+        h1 {
+            font-family: Arial;
+            color: rgb(61, 29, 29);
+        }
+
+        body {
+            margin: 20px;
+        }
+
+        canvas {
+            width: 300pt;
+            height: 200pt;
+            margin: 10px;
+            border: 1px solid lightgray;
+        }
+
+        input {
+            font-size: 20pt;
+        }
+
+        .orangeback {
+            background-color: orange;
+        }
+    </style>
+
+    <script>
+        function doBlue() {
+            var canvas = document.getElementById("can");
+            canvas.style.backgroundColor = "blue";
+        }
+
+        function doColor() {
+            var canvas = document.getElementById("can");
+            var colorinput = document.getElementById("clr");
+            canvas.style.backgroundColor = colorinput.value;
+        }
+
+        function doSquare(){
+            var sliderinput = document.getElementById("sqr");
+            var len = sliderinput.value;
+            var canvas = document.getElementById("can");
+            var ctx = canvas.getContext("2d");
+            ctx.clearRect(0,0,canvas.width, canvas.height);
+            ctx.fillRect(10,10,len,len);
+            ctx.fillRect(parseInt(len)+20,10,len,len);
+            ctx.fillRect(len*3, 10,len, len);
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Color chooser practice</h1>
+
+    <canvas id="can" class="orangeback">
+    </canvas>
+
+    <p>
+        <input type="button" value="Make Blue" onclick="doBlue()">
+        <input type="color" value="#FF0000" id="clr" onchange="doColor()">
+        <input type="range" name="" min="5" max="100" value="10" id="sqr" oninput="doSquare()">
+    </p>
+</body>
+
+</html>

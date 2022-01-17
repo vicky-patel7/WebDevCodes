@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://www.dukelearntoprogram.com/course1/common/js/image/SimpleImage.js"></script>
+    <style>
+        body {
+            background-color: lawngreen;
+        }
+
+        h3 {
+            font-style: oblique;
+            font-size: 20px;
+            color: lightcoral;
+            margin: 10px;
+        }
+
+        h4 {
+            font-size: 30px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: maroon;
+            text-align: center;
+        }
+
+        canvas {
+            border: 2px solid gray;
+            width: 600px;
+            height: auto;
+        }
+
+        .button {
+            background-color: mediumpurple;
+            height: 30px;
+            border-radius: 5px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+    </style>
+
+    <script>
+        var image;
+        function Claearfilter() {
+            var canvas = document.getElementById("can");
+            uploadfile(image);
+        }
+        function uploadfile() {
+            var fileinput = document.getElementById("inputfile");
+            image = new SimpleImage(fileinput);
+            var canvas = document.getElementById("can");
+            image.drawTo(canvas);
+        }
+
+        function grayscale() {
+            for (var pixel of image.values()) {
+                var value = (pixel.getRed() + pixel.getGreen() + pixel.getBlue()) / 3;
+                pixel.setRed(value);
+                pixel.setGreen(value);
+                pixel.setBlue(value);
+            }
+            var canvas = document.getElementById("can");
+            image.drawTo(canvas);
+        }
+        function rainbow() {
+            for (var pixel of image.values()) {
+                var avg = (pixel.getRed() + pixel.getGreen() + pixel.getBlue()) / 3;
+                var y = pixel.getY();
+                var height = image.getHeight();
+                //Red
+                if (y < height / 7 && avg < 128) {
+                    pixel.setRed(2 * avg);
+                    pixel.setGreen(0);
+                    pixel.setBlue(0);
+                }
+                if (y < height / 7 && avg >= 128) {
+                    pixel.setRed(255);
+                    pixel.setGreen(2 * avg - 255);
+                    pixel.setBlue(2 * avg - 255);
+                }
+                //Orange
+                if (y >= height / 7 && y < height * 2 / 7 && avg < 128) {
+                    pixel.setRed(2 * avg);
+                    pixel.setGreen(0.8 * avg);
+                    pixel.setBlue(0);
+                }
+                if (y >= height / 7 && y < height * 2 / 7 && avg >= 128) {
+                    pixel.setRed(255);
+                    pixel.setGreen((1.2 * avg) - 51);
+                    pixel.setBlue((2 * avg) - 255);
+                }
+                //Yellow
+                if (y >= height * 2 / 7 && y < height * 3 / 7 && avg < 128) {
+                    pixel.setRed(2 * avg);
+                    pixel.setGreen(2 * avg);
+                    pixel.setBlue(0);
+                }
+                if (y >= height * 2 / 7 && y < height * 3 / 7 && avg >= 128) {
+                    pixel.setRed(255);
+                    pixel.setGreen(255);
+                    pixel.setBlue((2 * avg) - 255);
+                }
+                //Green
+                if (y >= height * 3 / 7 && y < height * 4 / 7 && avg < 128) {
+                    pixel.setGreen(2 * avg);
+                    pixel.setRed(0);
+                    pixel.setBlue(0);
+                }
+                if (y >= height * 3 / 7 && y < height * 4 / 7 && avg >= 128) {
+                    pixel.setGreen(255);
+                    pixel.setRed((2 * avg) - 255);
+                    pixel.setBlue((2 * avg) - 255);
+                }
+                //Blue
+                if (y >= height * 4 / 7 && y < height * 5 / 7 && avg < 128) {
+                    pixel.setBlue(2 * avg);
+                    pixel.setGreen(0);
+                    pixel.setRed(0);
+                }
+                if (y >= height * 4 / 7 && y < height * 5 / 7 && avg >= 128) {
+                    pixel.setBlue(255);
+                    pixel.setGreen((2 * avg) - 255);
+                    pixel.setRed((2 * avg) - 255);
+                }
+                //Indigo
+                if (y >= height * 5 / 7 && y < height * 6 / 7 && avg < 128) {
+                    pixel.setRed(0.8 * avg);
+                    pixel.setBlue(2 * avg);
+                    pixel.setGreen(0);
+                }
+                if (y >= height * 5 / 7 && y < height * 6 / 7 && avg >= 128) {
+                    pixel.setRed((1.2 * avg) - 51);
+                    pixel.setBlue(255);
+                    pixel.setGreen((2 * avg) - 255);
+                }
+                //Violet
+                if (y >= height * 6 / 7 && avg < 128) {
+                    pixel.setRed(1.6 * avg);
+                    pixel.setBlue(1.6 * avg);
+                    pixel.setGreen(0);
+                }
+                if (y >= height * 6 / 7 && avg >= 128) {
+                    pixel.setRed(0.4 * avg + 153);
+                    pixel.setBlue(0.4 * avg + 153);
+                    pixel.setGreen((2 * avg) - 255);
+                }
+            }
+            var canvas = document.getElementById("can");
+            image.drawTo(canvas);
+        }
+        function makeRed() {
+            for (var pixel of image.values()) {
+                pixel.setRed(255);
+            }
+            var canvas = document.getElementById("can");
+            image.drawTo(canvas);
+        }
+        function redfilter() {
+            for (var pixel of image.values()) {
+                var avg = (pixel.getRed() + pixel.getBlue() + pixel.getGreen()) / 3;
+                if (avg < 128) {
+                    pixel.setRed(2 * avg);
+                    pixel.setGreen(0);
+                    pixel.setBlue(0);
+                }
+                else {
+                    pixel.setRed(255);
+                    pixel.setGreen(2 * avg - 255);
+                    pixel.setBlue(2 * avg - 255);
+                }
+            }
+            var canvas = document.getElementById("can");
+            image.drawTo(canvas);
+        }
+        function makeblur() {
+            var width = image.getWidth();
+            var height = image.getHeight();
+            var Image = new SimpleImage(width, height);
+            for (var pixel of image.values()) {
+                var random = getRandom();
+                var x = pixel.getX();
+                var y = pixel.getY();
+                if (random < 0.5) {
+                    var r = pixel.getRed();
+                    var g = pixel.getGreen();
+                    var b = pixel.getBlue();
+                    var blur = Image.getPixel(x, y);
+                    blur.setRed(r);
+                    blur.setGreen(g);
+                    blur.setBlue(b);
+                }
+                else {
+                    var randomX = getRandomInt(0, 10);
+                    var randomY = getRandomInt(0, 10);
+                    var newX = x + randomX;
+                    var newY = y + randomY;
+                    if (newX > width - 1) {
+                        newX = newX - randomX;
+                    }
+                    if (newY > height - 1) {
+                        newY = newY - randomY;
+                    }
+                    var pixelImage = image.getPixel(newX, newY);
+                    r = pixelImage.getRed();
+                    g = pixelImage.getGreen();
+                    b = pixelImage.getBlue();
+                    blur = Image.getPixel(x, y);
+                    blur.setRed(r);
+                    blur.setGreen(g);
+                    blur.setBlue(b);
+
+                }
+            }
+            imgcanvas = document.getElementById("can");
+            Image.drawTo(imgcanvas);
+        }
+
+        function getRandom() {
+            return Math.random();
+        }
+
+        function getRandomInt(min, max) {
+            return Math.floor(Math.random() * (max - min) + min);
+        }
+        function getRandom() {
+            return Math.random();
+        }
+
+        function getRandomInt(min, max) {
+            return Math.floor(Math.random() * (max - min) + min);
+        }
+        function makemirror() {
+            var w = image.getWidth();
+            var h = image.getHeight();
+            var half = Math.floor(w / 2);
+            //
+            for (var y = 0; y < h; y++) {
+                for (var x = 0; x < half; x++) {
+                    var pixL = image.getPixel(x, y);
+                    var pixR = image.getPixel(w - x - 1, y);
+                    swapPixels(pixL, pixR);
+                }
+            }
+            imgcanvas = document.getElementById("can");
+            image.drawTo(imgcanvas);
+        }
+
+        function swapPixels(pix1, pix2) {
+            var r = pix2.getRed();
+            var g = pix2.getGreen();
+            var b = pix2.getBlue();
+            var a = pix2.getAlpha();
+            pix2.setAllFrom(pix1);
+            pix1.setRed(r);
+            pix1.setGreen(g);
+            pix1.setBlue(b);
+            pix1.setAlpha(a);
+        }
+
+        function makeduplicatemirror() {
+            if (!readyImg(image)) {
+                alert("The image is not loaded! Please load Image first.");
+            }
+            var w = image.getWidth();
+            var h = image.getHeight();
+            var half = Math.floor(w / 4);
+            //
+            for (var y = 0; y < h; y++) {
+                for (var x = 0; x < half; x++) {
+                    var pixL = image.getPixel(x, y);
+                    var pixR = image.getPixel(w / 2 - x - 1, y);
+                    swapPixels(pixL, pixR);
+                }
+            }
+            for (var i = 0; i < h; i++) {
+                for (var j = w / 2; j < w; j++) {
+                    var pixA = image.getPixel(x, y);
+                    var pixB = image.getPixel(w - x / 2 - 1, y);
+                    swapPixels(pixA, pixB);
+                }
+            }
+            makemirror();
+            imgcanvas = document.getElementById("can");
+            image.drawTo(imgcanvas);
+        }
+    </script>
+
+    <title>Mini Projects</title>
+</head>
+
+<body>
+    <h3>This is a mini project in which you can upload image and apply filters on the uploaded image</h3>
+    <h4><b>Choose and Upload an image</b></h4>
+    <canvas id="can">
+
+    </canvas>
+    <input type="file" name="" id="inputfile" accept="image/*" multiple="false">
+    <input class="button" type="button" value="Upload" onclick="uploadfile()">
+    <h3>
+        Choose any filter to apply
+    </h3>
+    <p>
+        <input class="button" type="button" value="Grayscale" onclick="grayscale()">
+        <input class="button" type="button" value="Rainbow" onclick="rainbow()">
+        <input class="button" type="button" value="Do Red" onclick="makeRed()">
+        <input class="button" type="button" value="Red Filter" onclick="redfilter()">
+        <input class="button" type="button" value="Blur Image" onclick="makeblur()">
+        <input class="button" type="button" value="Make Mirror" onclick="makemirror()">
+    <h3>
+        Reset the filter to its original image
+    </h3>
+    <input class="button" type="button" value="Clear" onclick="Claearfilter()">
+    </p>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stanography</title>
+    <script src="https://www.dukelearntoprogram.com/course1/common/js/image/SimpleImage.js"></script>
+    <style>
+        canvas{
+            border: 5px solid violet;
+        }
+    </style>
+    <script>
+        var image1;
+        var image2;
+        function uploadImage(){
+            var inputfile1 = document.getElementById("inputimage1");
+            var inputfile2 = document.getElementById("inputimage2");
+            image1 = new SimpleImage(inputfile1);
+            image2 = new SimpleImage(inputfile2);
+            var canvas1 = document.getElementById("can1");
+            var canvas2 = document.getElementById("can2");
+            image1.drawTo(canvas1);
+            image2.drawTo(canvas2);
+        }
+        function clearbits(){
+        }
+        function hideimage(){
+
+        }
+    </script>
+</head>
+<body>
+     <canvas id="can1">
+
+     </canvas>
+     <canvas id="can2">
+
+     </canvas>
+    <p> 
+    File to be hide:<input type="file" name="image" id="inputimage1" accept="images/*" multiple="false"> <br>
+    File in which to be hide: <input type="file" name="image" id="inputimage2" accept="images/*" multiple="false">
+    </p>
+    <input type="button" value="Upload" onclick="uploadImage()">
+    <input type="button" value="Hide Image" onclick="hideimage()">
+
+</body>
+</html>
